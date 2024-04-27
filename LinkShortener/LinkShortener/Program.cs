@@ -1,3 +1,5 @@
+using LinkShortener.Extensions;
+
 internal class Program
 {
     public static void Main(string[] args)
@@ -5,7 +7,8 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddControllersWithViews();
+        builder.AddDataBase();
+        builder.AddServices();
 
         var app = builder.Build();
 

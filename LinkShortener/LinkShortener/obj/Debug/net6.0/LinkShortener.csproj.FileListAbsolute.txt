@@ -24,3 +24,16 @@ D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\obj\Debug\
 D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\obj\Debug\net6.0\LinkShortener.pdb
 D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\obj\Debug\net6.0\LinkShortener.genruntimeconfig.cache
 D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\obj\Debug\net6.0\ref\LinkShortener.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Humanizer.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\MySqlConnector.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.Design.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\obj\Debug\net6.0\LinkShortener.csproj.CopyComplete
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
