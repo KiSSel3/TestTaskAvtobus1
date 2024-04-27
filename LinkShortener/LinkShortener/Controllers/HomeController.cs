@@ -107,6 +107,24 @@ public class HomeController : Controller
         }
     }
     
+    [HttpGet("/{shortUrl}")]
+    public async Task<IActionResult> RedirectUrl(string shortUrl)
+    {
+        try
+        {
+            var link = await _linkService.GetLinkByShortUrl(shortUrl);
+
+            link.CountClicks += 1;
+            await _linkService.UpdateLinkAsync(link);
+            
+            return Redirect(link.FullUrl);
+        }
+        catch (Exception ex)
+        {
+            return View("Error", new ErrorViewModel() { RequestId = ex.Message });
+        }
+    }
+    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

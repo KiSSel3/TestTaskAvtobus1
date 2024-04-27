@@ -96,6 +96,21 @@ public class LinkService : ILinkService
         return links;
     }
 
+    public async Task<Link> GetLinkByShortUrl(string generatedUrl)
+    {
+        var url = $"{_baseUrl}/{generatedUrl}";
+        
+        var allLinks = await _linkRepository.GetAllAsync();
+        
+        var link = allLinks.FirstOrDefault(link => link.ShortUrl.Equals(url));
+        if (link is null)
+        {
+            throw new Exception($"Link [{url}] not found.");
+        }
+
+        return link;
+    }
+
     private async Task<bool> UniqueCheck(string fullUrl)
     {
         var allLinks = await _linkRepository.GetAllAsync();

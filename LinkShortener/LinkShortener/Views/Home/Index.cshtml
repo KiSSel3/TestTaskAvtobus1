@@ -18,8 +18,8 @@
     @foreach (var link in Model)
     {
         <tr>
-            <td>@link.FullUrl</td>
-            <td>@link.ShortUrl</td>
+            <td><a href="@link.FullUrl">@link.FullUrl</a></td>
+            <td><a href="@link.ShortUrl">@link.ShortUrl</a></td>
             <td>@link.CreationDate</td>
             <td>@link.CountClicks</td>
 

@@ -9,4 +9,5 @@ public interface ILinkService
     public Task UpdateLinkAsync(Link newLink);
     public Task DeleteLinkAsync(Guid id);
     public Task<IEnumerable<Link>> GetAllLinksAsync();
+    public Task<Link> GetLinkByShortUrl(string generatedUrl);
 }

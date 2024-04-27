@@ -37,3 +37,4 @@ D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\obj\Debug\
 D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener\bin\Debug\net6.0\libman.json
