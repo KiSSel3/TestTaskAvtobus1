@@ -1,6 +1,10 @@
 using LinkShortener.Repositories;
 using LinkShortener.Repositories.Implementations;
 using LinkShortener.Repositories.Interfaces;
+using LinkShortener.Services.Implementations;
+using LinkShortener.Services.Interfaces;
+using LinkShortener.Tools.Implementations;
+using LinkShortener.Tools.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LinkShortener.Extensions;
@@ -16,7 +20,10 @@ public static class BuilderExtension
         builder.Services.AddScoped<ILinkRepository, LinkRepository>();
 
         //Service
-
+        builder.Services.AddScoped<ILinkService, LinkService>();
+        
+        //Other
+        builder.Services.AddScoped<IShortener, Shortener>();
     }
     
     public static void AddDataBase(this WebApplicationBuilder builder)
