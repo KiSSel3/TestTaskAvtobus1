@@ -15,12 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Programming\TestTasks\TestTaskAvtobus1\LinkShortener\LinkShortener
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Programming/TestTasks/TestTaskAvtobus1/LinkShortener/LinkShortener/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/TestTasks/TestTaskAvtobus1/LinkShortener/LinkShortener/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/TestTasks/TestTaskAvtobus1/LinkShortener/LinkShortener/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/Programming/TestTasks/TestTaskAvtobus1/LinkShortener/LinkShortener/Views/Home/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Programming/TestTasks/TestTaskAvtobus1/LinkShortener/LinkShortener/Views/Shared/Error.cshtml]

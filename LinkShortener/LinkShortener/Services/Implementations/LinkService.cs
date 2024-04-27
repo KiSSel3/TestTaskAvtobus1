@@ -32,6 +32,12 @@ public class LinkService : ILinkService
 
     public async Task CreateLinkAsync(string fullUrl)
     {
+        bool isUnique = await UniqueCheck(fullUrl);
+        if (!isUnique)
+        {
+            throw new Exception("This url already exists.");
+        }
+        
         string generatedUrl = _shortener.GenerateShortUrl(fullUrl);
         
         Link newLink = new Link()
@@ -45,16 +51,29 @@ public class LinkService : ILinkService
         await _linkRepository.CreateAsync(newLink);
     }
 
-    public async Task UpdateLinkAsync(Link link)
+    public async Task UpdateLinkAsync(Link newLink)
     {
-        var forCheck = await _linkRepository.GetByIdAsync(link.Id);
-        if (forCheck is null)
+        var link = await _linkRepository.GetByIdAsync(newLink.Id);
+        if (link is null)
         {
-            throw new Exception($"Link with id [{link.Id}] not found. Update error.");
+            throw new Exception($"Link with id [{newLink.Id}] not found. Update error.");
         }
-        
-        string generatedUrl = _shortener.GenerateShortUrl(link.FullUrl);
-        link.ShortUrl = $"{_baseUrl}/{generatedUrl}";
+
+        if (!link.FullUrl.Equals(newLink.FullUrl))
+        {
+            bool isUnique = await UniqueCheck(newLink.FullUrl);
+            if (!isUnique)
+            {
+                throw new Exception("This url already exists.");
+            }
+
+            link.FullUrl = newLink.FullUrl;
+            
+            string generatedUrl = _shortener.GenerateShortUrl(newLink.FullUrl);
+            link.ShortUrl = $"{_baseUrl}/{generatedUrl}";
+        }
+
+        link.CountClicks = newLink.CountClicks;
 
         await _linkRepository.UpdateAsync(link);
     }
@@ -75,5 +94,17 @@ public class LinkService : ILinkService
         var links = await _linkRepository.GetAllAsync();
 
         return links;
+    }
+
+    private async Task<bool> UniqueCheck(string fullUrl)
+    {
+        var allLinks = await _linkRepository.GetAllAsync();
+
+        if (allLinks.Count(link => link.FullUrl.Equals(fullUrl)) != 0)
+        {
+            return false;
+        }
+
+        return true;
     }
 }

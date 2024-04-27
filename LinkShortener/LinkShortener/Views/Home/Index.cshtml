@@ -1,8 +1,42 @@
-﻿@{
+﻿@model IEnumerable<LinkShortener.Entities.Link>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<table class="table table-sm table-striped caption-top table-hover table-bordered align-middle">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">Длинный URL</th>
+        <th scope="col">Сокращённый URL</th>
+        <th scope="col">Дата создания</th>
+        <th scope="col">Количество переходов</th>
+        <th scope="col">Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var link in Model)
+    {
+        <tr>
+            <td>@link.FullUrl</td>
+            <td>@link.ShortUrl</td>
+            <td>@link.CreationDate</td>
+            <td>@link.CountClicks</td>
+
+            <td>
+                <a class="btn btn-primary w-100 h-100 mx-2 my-2" href="@Url.Action("Update","Home",new {id=@link.Id})">Изменить</a>
+
+                <a class="btn btn-primary w-100 h-100 mx-2 my-2" href="@Url.Action("Delete", "Home", new { id = @link.Id })">Удалить</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="15">
+            <a type="button" class="btn btn-primary w-100 h-100" asp-controller="Home" asp-action="Create" >
+                <i class="fas fa-plus-circle fa-3x"></i>
+            </a>
+        </td>
+        
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+@model LinkShortener.Entities.Link
+
+<div class="modal fade" id="validationErrorsModal" tabindex="-1" aria-labelledby="validationErrorsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="validationErrorsModalLabel">Ошибки валидации</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>@Html.ValidationSummary(false, "", new { @class = "text-danger" })</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="updateLabel">Изменить</h5>
+        </div>
+        <div class="modal-body">
+            <form id="update-form" class="form-horizontal" asp-controller="Home" asp-action="Update" method="post">
+                <input type="hidden" name="Id"  value="@Model.Id">
+                <input type="hidden" name="CountClicks"  value="@Model.CountClicks">
+                <input type="hidden" name="CreationDate"  value="@Model.CreationDate">
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="urlId">Длинная ссылка:</span>
+                    <input type="text" name="FullUrl" class="form-control" aria-label="fullUrl" aria-describedby="urlId" value="@Model.FullUrl" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="shortUrlId">Короткая ссылка:</span>
+                    <input type="text" name="ShortUrl" class="form-control" aria-label="shortUrl" aria-describedby="shortUrlId" value="@Model.ShortUrl" readonly>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a type="button" class="btn btn-secondary" asp-controller="Home" asp-action="Index">Закрыть</a>
+            <button type="submit" class="btn btn-primary" form="update-form">Изменить</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <text>$('#validationErrorsModal').modal('show'); </text>
+            }
+        })
+    </script>
+}
